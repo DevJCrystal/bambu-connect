@@ -67,6 +67,7 @@ class IPCam:
     ipcam_dev: Optional[str] = None
     ipcam_record: Optional[str] = None
     timelapse: Optional[str] = None
+    resolution: Optional[str] = None
     mode_bits: Optional[int] = None
 
 @dataclass
@@ -86,6 +87,7 @@ class UpgradeState:
     message: Optional[str] = None
     module: Optional[str] = None
     new_version_state: Optional[int] = None
+    cur_state_code: Optional[int] = None
     new_ver_list: Optional[List[Any]] = None
 
 
@@ -93,6 +95,8 @@ class UpgradeState:
 class PrinterStatus:
     upload: Optional[Upload] = None
     nozzle_temper: Optional[float] = None
+    nozzle_type: Optional[str] = None
+    nozzle_diameter: Optional[str] = None
     nozzle_target_temper: Optional[float] = None
     bed_temper: Optional[float] = None
     bed_target_temper: Optional[float] = None
@@ -137,6 +141,7 @@ class PrinterStatus:
     total_layer_num: Optional[int] = None
     s_obj: Optional[List[Any]] = None
     fan_gear: Optional[int] = None
+    filam_bak: Optional[List[Any]] = None
     hms: Optional[List[Any]] = None
     online: Optional[Online] = None
     ams: Optional[AMS] = None
